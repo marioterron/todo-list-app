@@ -51,6 +51,8 @@ To update a task. It needs to receive one or more of the following values: compl
 
 ```
 curl -X PUT --data "completed=true" localhost:3000/task/59255d4b9104a81def8eef5a
+curl -X PUT --data "name=Buy more water" localhost:3000/task/59255d4b9104a81def8eef5a
+
 ```
 
 ### DELETE endpoints
