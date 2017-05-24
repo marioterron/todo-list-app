@@ -13,7 +13,7 @@ Example: `http://localhost:3000/tasks`
 Get List ALL tasks
 
 ```
-	curl localhost:3000/taks
+curl localhost:3000/taks
 ```
 
 
@@ -24,7 +24,7 @@ Get List ALL tasks
 To add a task. It only need a title value. The rest of the values (completed, createdAt, id) will be added automatically
 
 ```
-	curl -X POST --data "title=Buy water" localhost:3000/tasks
+curl -X POST --data "title=Buy water" localhost:3000/tasks
 ```
 
 ### PUT endpoints
@@ -34,7 +34,7 @@ To add a task. It only need a title value. The rest of the values (completed, cr
 To update a task. It needs to receive one or more of the following values: completed, title (even if not all are being updated).
 
 ```
-	curl -X PUT --data "completed=true" localhost:3000/task/59255d4b9104a81def8eef5a
+curl -X PUT --data "completed=true" localhost:3000/task/59255d4b9104a81def8eef5a
 ```
 
 ### DELETE endpoints
@@ -44,5 +44,5 @@ To update a task. It needs to receive one or more of the following values: compl
 To remove a task. Only by passing an id the task will be removed.
 
 ```
-	curl -X DELETE localhost:3000/task/59255d4b9104a81def8eef5a
+curl -X DELETE localhost:3000/task/59255d4b9104a81def8eef5a
 ```
