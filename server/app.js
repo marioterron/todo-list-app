@@ -1,7 +1,8 @@
+// Mongo config
 const express = require('express')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
+const bodyParserMiddleware = require('./routes/middlewares/bodyParser')
 const routerTasks = require('./routes/tasks')
 const routerTask = require('./routes/task')
 
@@ -11,14 +12,12 @@ const PORT = 3000
 
 const app = express()
 
+// Mongoose config
 mongoose.Promise = Promise
 mongoose.connect(dbUrl)
 
-app.use(bodyParser.urlencoded({
-	extended: false
-}))
-app.use(bodyParser.json())
-
+// App config
+app.use(bodyParserMiddleware)
 app.use('/tasks', routerTasks)
 app.use('/task', routerTask)
 
