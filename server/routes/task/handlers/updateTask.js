@@ -6,8 +6,10 @@ function updateTask (req,res) {
 	const { completed, title } = req.body
 
 	const updateData = {}
+
 	if (completed) updateData.completed = completed
 	if (title) updateData.title = title
+	if (completed || title) updateData.modifiedAt = +new Date()
 
   Task.findByIdAndUpdate(id, updateData)
     .then( msg => {

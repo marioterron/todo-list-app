@@ -14,6 +14,10 @@ const taskSchema = new mongoose.Schema({
 	createdAt: {
 		type: Number,
 		default: +new Date()
+	},
+	modifiedAt: {
+		type: Number,
+		default: +new Date()
 	}
 }, { collection } )
 
