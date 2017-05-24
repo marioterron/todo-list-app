@@ -10,10 +10,26 @@ Example: `http://localhost:3000/tasks`
 
 ### [GET] `tasks`
 
-Get List ALL tasks
+Get list all tasks
 
 ```
-curl localhost:3000/taks
+curl localhost:3000/tasks
+```
+
+### [GET] `tasks/completed`
+
+Get list all completed tasks
+
+```
+curl localhost:3000/tasks/completed
+```
+
+### [GET] `tasks`
+
+Get list all pending tasks
+
+```
+curl localhost:3000/tasks/pending
 ```
 
 
