@@ -7,11 +7,11 @@ block content
 				h1 To-do List
 				br
 				form(action='/tasks', method='POST')
-					.input-group
+					.input-group.input-container
 						input.form-control.add-todo(name="title", type='text', placeholder='Buy water, go to the reunion with clients..', autofocus)
-						span.input-group-btn
-							button#checkAll.btn.btn-primary Add Task
-				hr
+					.btn-container
+						button#checkAll.btn.btn-primary Add Task
+						button#checkAll.btn.btn-success Mark all as completed
 				ul#sortable.list-unstyled.list-group.list-tasks
 					each task in tasks
 						if task.completed === false
@@ -28,7 +28,7 @@ block content
 										i.glyphicon.glyphicon-pencil
 									a.btn.btn-danger.remove(href=`/task/${task.id}`)
 										i.glyphicon.glyphicon-trash
-
+					//- li.list-group-item
 
 				h3 Completed task
 				br
