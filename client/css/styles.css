@@ -1,0 +1,23 @@
+.list-tasks li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-tasks .input-lg {
+  height: 38px;
+}
+
+.list-tasks small {
+  font-size: 55%;
+  padding-left: 10px;
+  font-style: italic;
+}
+
+.list-tasks .content p {
+  font-size: 20px;
+}
+
+.list-tasks .edition {
+  display: flex;
+  justify-content: space-between;
+}
