@@ -1,0 +1,21 @@
+{
+  "name": "todo-list-api",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Mario Terron <marioterron157@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MarioTerron/todo-list-api",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
