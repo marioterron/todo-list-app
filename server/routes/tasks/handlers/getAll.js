@@ -6,7 +6,6 @@ function getAll(req,res) {
     .then( tasks => {
       res.render('tasks', {tasks})
     })
-
 }
 
 module.exports = getAll

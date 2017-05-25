@@ -26,10 +26,10 @@ app.locals.pretty = true;
 app.locals.moment = require('moment');
 
 app.use(express.static(path.join(__dirname, '../client')));
-
-// app.use(apiKeyMiddleware);
 app.use(bodyParserMiddleware);
 app.use('/tasks', routerTasks);
 app.use('/task', routerTask);
+
+app.get('/', (req, res) => res.redirect('/tasks'))
 
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}...`));
