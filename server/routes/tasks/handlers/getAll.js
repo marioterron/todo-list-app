@@ -1,10 +1,10 @@
-const Task = require('../../../models/task')
+const Task = require('../../../models/Task')
 
 function getAll(req,res) {
 
   Task.find()
     .then( tasks => {
-      res.json(tasks)
+      res.render('tasks', {tasks})
     })
 
 }

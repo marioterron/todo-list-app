@@ -1,4 +1,5 @@
-const Task = require('../../../models/task')
+const Task = require('../../../models/Task')
+const moment = require('moment')
 
 function updateTask (req,res) {
 
@@ -9,14 +10,14 @@ function updateTask (req,res) {
 
 	if (completed) updateData.completed = completed
 	if (title) updateData.title = title
-	if (completed || title) updateData.modifiedAt = +new Date()
+	if (completed || title) updateData.modifiedAt = moment().valueOf()
 
   Task.findByIdAndUpdate(id, updateData)
     .then( msg => {
-      res.json(msg)
+      res.status(200).json(msg)
     })
     .catch( err => {
-      res.json(err)
+      res.status(500).json(err)
     })
 }
 

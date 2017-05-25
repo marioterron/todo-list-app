@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	.container
+		.row
+			.col-md-8.col-md-offset-2
+				h1 Task lists
+				br
+				form(action='/tasks', method='POST')
+					.input-group
+						input.form-control.add-todo(name="title", type='text', placeholder='Buy water, go to the reunion with clients..', autofocus)
+						span.input-group-btn
+							button#checkAll.btn.btn-primary Add Task
+				hr
+				ul#sortable.list-unstyled.list-group.list-tasks
+					each task in tasks
+						if task.completed === false
+							li.list-group-item
+								.content
+									p #{task.title}
+										small Created at: #{moment(task.createdAt).format('LLL')}
+									form.edit-form(action=`/task/${task.id}`)
+										input.input-lg.hidden(name='title', value=task.title)
+								.edition
+									a.btn.btn-success.completed(href=`/task/${task.id}`)
+										i.glyphicon.glyphicon-ok
+									a.btn.btn-primary.edit
+										i.glyphicon.glyphicon-pencil
+									a.btn.btn-danger.remove(href=`/task/${task.id}`)
+										i.glyphicon.glyphicon-trash
+
+
+				h3 Completed task
+				br
+				ul#sortable.list-unstyled.list-group.tasks-completed
+					each task in tasks
+						if task.completed === true
+							li.list-group-item
+								.content
+									p
+										del #{task.title}&nbsp;&nbsp;
+											span.date-completed (Completed at: #{moment(task.modifiedAt).format('LLL')})
+									form.edit-form(action=`/task/${task.id}`)
+										input.input-lg.hidden(name='title', value=task.title)
