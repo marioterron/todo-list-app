@@ -8,9 +8,13 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# HTML, CSS & SCSS files
-[*.{html,css,scss}]
+# HTML files
+[*.html]
 indent_size = 4
+
+#  CSS & SCSS files
+[*.{css,scss}]
+indent_size = 2
 
 # PUG files
 [*.pug]
