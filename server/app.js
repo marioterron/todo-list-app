@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const pug = require('pug');
 const path = require('path');
 
+global.__base = __dirname + '/';
+
 const apiKeyMiddleware = require('./routes/middlewares/apiKey');
 const bodyParserMiddleware = require('./routes/middlewares/bodyParser');
 const routerTasks = require('./routes/tasks');
@@ -12,6 +14,7 @@ const routerTask = require('./routes/task');
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
+
 
 const DB_URI = process.env.DB_URI
 const PORT = process.env.PORT
