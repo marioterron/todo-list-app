@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && bower install",
-    "dev": "nodemon server/app"
+		"postinstall": "node ./node_modules/bower/bin/bower install",
+		"dev": "nodemon server/app",
+		"dev:debug": "DEBUG=*,-nodemon*,-send* npm run dev",
+		"start": "node server/app"
   },
   "keywords": [],
   "author": "",
