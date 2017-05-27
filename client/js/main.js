@@ -1,5 +1,5 @@
 // Event on click completed task
-$('#task-done').on('click', function(e) {
+$('.task-done').on('click', function(e) {
 	e.preventDefault();
 
 	const url = $(this).attr("href")
@@ -13,7 +13,7 @@ $('#task-done').on('click', function(e) {
 })
 
 // Event on click remove task
-$('#task-remove').on('click', function(e) {
+$('.task-remove').on('click', function(e) {
 	e.preventDefault();
 
 	const url = $(this).attr("href")
@@ -26,7 +26,7 @@ $('#task-remove').on('click', function(e) {
 })
 
 // Event on click edit btn
-$('#task-edit').on('click', function(e) {
+$('.task-edit').on('click', function(e) {
   e.preventDefault();
 
   $(this).closest('li').find("form input").removeClass("hidden")

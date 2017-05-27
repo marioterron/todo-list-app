@@ -9,7 +9,6 @@ const db = require('./server/config/db');
 const DB_URI = process.env.DB_URI
 const PORT = process.env.PORT
 
-
 console.log(`Connecting to ${DB_URI}...`);
 
 db.open(DB_URI);

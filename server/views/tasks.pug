@@ -24,11 +24,11 @@ block content
 									form.edit-form(action=`/task/${task.id}`)
 										input.input-lg.hidden(name='title', value=task.title)
 								.edition
-									a#task-done.btn.btn-success(href=`/task/${task.id}`)
+									a.task-done.btn.btn-success(href=`/task/${task.id}`)
 										i.glyphicon.glyphicon-ok
-									a#task-edit.btn.btn-primary
+									a.task-edit.btn.btn-primary
 										i.glyphicon.glyphicon-pencil
-									a#task-remove.btn.btn-danger(href=`/task/${task.id}`)
+									a.task-remove.btn.btn-danger(href=`/task/${task.id}`)
 										i.glyphicon.glyphicon-trash
 
 				div.panel.sub-panel
