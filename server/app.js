@@ -9,14 +9,18 @@ const bodyParserMiddleware = require('./routes/middlewares/bodyParser');
 const routerTasks = require('./routes/tasks');
 const routerTask = require('./routes/task');
 
-const dbUrl = 'mongodb://localhost:27017/test';
-const PORT = 3000;
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
+const DB_URI = process.env.DB_URI
+const PORT = process.env.PORT
 
 const app = express();
 
 // Mongoose config
 mongoose.Promise = Promise;
-mongoose.connect(dbUrl);
+mongoose.connect(DB_URI);
 
 // App config
 app.set('view engine', 'pug');
