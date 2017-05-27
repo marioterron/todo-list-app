@@ -1,4 +1,4 @@
-const Task = require('../../../models/Task')
+const Task = require(__base + 'models/Task')
 const debug = require('debug')('task')
 
 function removeTask (req,res) {
