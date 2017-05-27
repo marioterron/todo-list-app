@@ -1,13 +1,14 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-global.__base = __dirname + '/server';
+global.__base = __dirname + '/server/';
+
+const app = require('./server/app');
+const db = require('./server/config/db');
 
 const DB_URI = process.env.DB_URI
 const PORT = process.env.PORT
 
-const app = require('./server/app');
-const db = require('./server/config/db');
 
 console.log(`Connecting to ${DB_URI}...`);
 
