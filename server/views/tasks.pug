@@ -3,7 +3,7 @@ extends layout
 block content
 	.container
 		.row
-			.col-md-8.col-md-offset-2
+			.col-md-8
 				h1.app-title
 					span SKY
 					span.c-primary TASKR!
@@ -12,9 +12,8 @@ block content
 					.input-group.input-container
 						input.form-control.add-todo(name="title", type='text', placeholder='Buy water, go to the reunion with clients..', autofocus)
 					.btn-container
-						button#checkAll.btn.btn-primary Add Task
-						button#checkAll.btn.btn-success
-							a(href='/tasks/completed') See all completed tasks
+						button.btn.btn-primary Add Task
+						a.btn.btn-success See all completed tasks
 				div.panel
 					ul#sortable.list-unstyled.list-group.task-list
 						each task in tasks
@@ -25,11 +24,11 @@ block content
 									form.edit-form(action=`/task/${task.id}`)
 										input.input-lg.hidden(name='title', value=task.title)
 								.edition
-									a.btn.btn-success.completed(href=`/task/${task.id}`)
+									a#task-done.btn.btn-success(href=`/task/${task.id}`)
 										i.glyphicon.glyphicon-ok
-									a.btn.btn-primary.edit
+									a#task-edit.btn.btn-primary
 										i.glyphicon.glyphicon-pencil
-									a.btn.btn-danger.remove(href=`/task/${task.id}`)
+									a#task-remove.btn.btn-danger(href=`/task/${task.id}`)
 										i.glyphicon.glyphicon-trash
 
 				div.panel.sub-panel
