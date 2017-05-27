@@ -9,8 +9,6 @@ const bodyParserMiddleware = require('./routes/middlewares/bodyParser');
 const routerTasks = require('./routes/tasks');
 const routerTask = require('./routes/task');
 
-global.__base = __dirname + '/'
-
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
