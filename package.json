@@ -6,9 +6,9 @@
   "scripts": {
 		"prestart": "npm install",
     "postinstall": "node ./node_modules/bower/bin/bower install",
-    "dev": "nodemon server/app",
+    "dev": "nodemon index",
     "dev:debug": "DEBUG=*,-nodemon*,-send* npm run dev",
-    "start": "node server/app"
+    "start": "node index"
   },
   "keywords": [],
   "author": "",
