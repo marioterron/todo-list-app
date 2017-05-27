@@ -4,7 +4,7 @@ function getAll(req,res) {
 
   Task.find()
     .then( tasks => {
-      res.render('tasks', {tasks})
+      res.json(tasks)
     })
 }
 

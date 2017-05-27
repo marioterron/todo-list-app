@@ -4,18 +4,21 @@ block content
 	.container
 		.row
 			.col-md-8.col-md-offset-2
-				h1 To-do List
+				h1.app-title
+					span SKY
+					span.c-primary TASKR!
 				br
 				form(action='/tasks', method='POST')
 					.input-group.input-container
 						input.form-control.add-todo(name="title", type='text', placeholder='Buy water, go to the reunion with clients..', autofocus)
 					.btn-container
 						button#checkAll.btn.btn-primary Add Task
-						button#checkAll.btn.btn-success Mark all as completed
-				ul#sortable.list-unstyled.list-group.list-tasks
-					each task in tasks
-						if task.completed === false
-							li.list-group-item
+						button#checkAll.btn.btn-success
+							a(href='/tasks/completed') See all completed tasks
+				div.panel
+					ul#sortable.list-unstyled.list-group.task-list
+						each task in tasks
+							li
 								.content
 									p #{task.title}
 										small Created at: #{moment(task.createdAt).format('LLL')}
@@ -28,17 +31,10 @@ block content
 										i.glyphicon.glyphicon-pencil
 									a.btn.btn-danger.remove(href=`/task/${task.id}`)
 										i.glyphicon.glyphicon-trash
-					//- li.list-group-item
 
-				h3 Completed task
-				br
-				ul#sortable.list-unstyled.list-group.tasks-completed
-					each task in tasks
-						if task.completed === true
-							li.list-group-item
-								.content
-									p
-										del #{task.title}&nbsp;&nbsp;
-											span.date-completed (Completed at: #{moment(task.modifiedAt).format('LLL')})
-									form.edit-form(action=`/task/${task.id}`)
-										input.input-lg.hidden(name='title', value=task.title)
+				div.panel.sub-panel
+					ul#sortable.list-unstyled.list-group.items-list
+						li
+							p
+								span.items-number #{tasks.length}
+								|  Items Left

@@ -4,7 +4,7 @@ function getAllPending(req,res) {
 
   Task.find({completed: false})
     .then( tasks => {
-      res.json(tasks)
+      res.render('tasks', {tasks})
     })
 
 }

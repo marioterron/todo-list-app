@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+	.container
+		.row
+			.col-md-8.col-md-offset-2
+				h3.app-subtitle Completed task
+				br
+				div.panel
+					ul#sortable.list-unstyled.list-group.tasks-completed
+						each task in tasks
+							li
+								.content
+									p
+										del #{task.title}&nbsp;&nbsp;
+											span.date-completed (Completed at: #{moment(task.modifiedAt).format('LLL')})
+									form.edit-form(action=`/task/${task.id}`)
+										input.input-lg.hidden(name='title', value=task.title)
+				a.go-back(href="/") ← Go back
