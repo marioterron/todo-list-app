@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+	"scripts": {
+		"prestart": "npm install",
+		"postinstall": "node ./node_modules/bower/bin/bower install",
+		"dev": "nodemon index",
+		"dev:debug": "DEBUG=*,-nodemon*,-send* npm run dev",
+		"start": "node index"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
