@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const pug = require('pug');
 const path = require('path');
 
-global.__base = __dirname + '/';
+global.__base = __dirname;
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
