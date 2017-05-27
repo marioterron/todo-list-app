@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const moment = require('moment')
 
-
 const collection = "tasks"
 
 const taskSchema = new mongoose.Schema({
