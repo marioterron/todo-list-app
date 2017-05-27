@@ -1,4 +1,4 @@
-const Task = require(__base + '/models/Task')
+const Task = require(__base + 'models/Task')
 const moment = require('moment')
 
 function updateTask (req,res) {
