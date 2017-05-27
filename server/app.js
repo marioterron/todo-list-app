@@ -19,9 +19,9 @@ app.locals.pretty = true;
 app.locals.moment = require('moment');
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__base, 'views'));
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__base, '../client')));
 app.use(bodyParserMiddleware);
 app.use('/tasks', routerTasks);
 app.use('/task', routerTask);

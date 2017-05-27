@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-global.__base = __dirname + '/server/';
+global.__base = __dirname + '/server';
 
 const app = require('./server/app');
 const db = require('./server/config/db');
