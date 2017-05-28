@@ -2,8 +2,8 @@ const express = require('express')
 const path = require('path')
 const pug = require('pug')
 
-const apiKeyMiddleware = require('./routes/middlewares/apiKey');
-const bodyParserMiddleware = require('./routes/middlewares/bodyParser');
+const routerConfig = require('./config/express')
+
 const routerTasks = require('./routes/tasks')
 const routerTask = require('./routes/task')
 
@@ -21,11 +21,11 @@ app.locals.moment = require('moment');
 app.set('view engine', 'pug');
 app.set('views', path.join(__base, 'views'));
 
-app.use(express.static(path.join(__base, '../client')));
-app.use(bodyParserMiddleware);
-app.use('/tasks', routerTasks);
-app.use('/task', routerTask);
+app.use(routerConfig)
 
 app.get('/', (req, res) => res.redirect('/tasks'))
+
+app.use('/tasks', routerTasks);
+app.use('/task', routerTask);
 
 module.exports = app
