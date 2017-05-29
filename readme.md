@@ -10,7 +10,7 @@
 
 # SKYTASKR!
 
-SKYTASKR! is a simple to-do list app build with HTML, CSS, jQuery, Express.js, MongoDB and Mongoose at Skylab Coders Academy Full Stack Web Development Bootcamp.
+SKYTASKR! is a simple to-do list app build with HTML, CSS, jQuery, Express.js, MongoDB and Mongoose at [Skylab Coders Academy](http://www.skylabcoders.com) Full Stack Web Development Bootcamp.
 
 ## Installation
 
@@ -85,7 +85,7 @@ curl -X POST --data "title=Buy water" localhost:3000/tasks
 
 ### PUT endpoints
 
-### [PUT] `task/id`
+### [PUT] `task/:id`
 
 To update a task. It needs to receive one or more of the following values: completed, title (even if not all are being updated).
 
@@ -96,7 +96,7 @@ curl -X PUT --data "title=Buy more water" localhost:3000/task/59255d4b9104a81def
 
 ### DELETE endpoints
 
-### [DELETE] `task/id`
+### [DELETE] `task/:id`
 
 To remove a task. Only by passing an id the task will be removed.
 
